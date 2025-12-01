@@ -1,10 +1,10 @@
 <?php
 
 class Database {
-    private $host = 'localhost'; // Ganti dengan host Anda
-    private $db_name = 'akademik'; // Ganti dengan nama database Anda
-    private $username = 'root'; // Ganti dengan username Anda
-    private $password = ''; // Ganti dengan password Anda
+    private $host = 'localhost';
+    private $db_name = 'akademik'; 
+    private $username = 'root'; 
+    private $password = '';
     public $conn;
 
     /**
