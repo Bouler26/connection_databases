@@ -1,28 +1,22 @@
-import siswa from "../data/siswa.json";
+import fs from "fs";
+import path from "path";
 
 export default function handler(req, res) {
-  const { id } = req.query;
+  const filePath = path.join(process.cwd(), "data", "siswa.json");
 
-  // Jika mencari berdasarkan ID
-  if (id) {
-    const result = siswa.find((item) => item.id === parseInt(id));
-    if (!result) {
-      return res.status(404).json({
-        status: false,
-        message: "Data siswa tidak ditemukan"
-      });
-    }
+  try {
+    const jsonData = fs.readFileSync(filePath, "utf-8");
+    const siswa = JSON.parse(jsonData);
 
-    return res.status(200).json({
-      status: true,
-      data: result
+    res.status(200).json({
+      success: true,
+      data: siswa,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Gagal membaca file JSON",
+      error: error.message,
     });
   }
-
-  // Jika meminta semua siswa
-  return res.status(200).json({
-    status: true,
-    total: siswa.length,
-    data: siswa
-  });
 }
