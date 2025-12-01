@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nama": "Andi Saputra",
+    "kelas": "XII RPL 1",
+    "alamat": "Makale",
+    "noHp": "081234567890"
+  },
+  {
+    "id": 2,
+    "nama": "Sari Melani",
+    "kelas": "XI TKJ 2",
+    "alamat": "Rantepao",
+    "noHp": "082345678900"
+  },
+  {
+    "id": 3,
+    "nama": "Johan Markus",
+    "kelas": "X RPL 3",
+    "alamat": "Sa'dan",
+    "noHp": "083987654321"
+  }
+]
